@@ -1,0 +1,9 @@
+services:
+    go-cli:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        container_name: ${CLI_CONTAINER_NAME}
+        command: sleep infinity
+        volumes:
+            - ./:/go
