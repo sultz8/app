@@ -1,6 +1,7 @@
 package main
 
 import (
+    "errors"
     "fmt"
 )
 
@@ -20,5 +21,17 @@ func main() {
 	}
 	
 	l.Print()
-	
+	fmt.Println(l.size)
+
+	for l.size != 0 {
+		fmt.Println(l.popBack())
+	}
+
+	_, err := l.popBack()
+	var emptyListErr *EmptyListError
+	if err != nil {
+		if errors.As(err, &emptyListErr) {
+			fmt.Println(err)
+		}
+	}
 }
