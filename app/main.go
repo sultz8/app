@@ -3,6 +3,7 @@ package main
 import (
     "errors"
     "fmt"
+	"github.com/sultz8/app/models"
 )
 
 func main() {
@@ -11,7 +12,7 @@ func main() {
 		nil,
 		0,
 	}
-	
+
 	values := []int{1, 2, 3, 4, 5}
 	for _, v := range values {
 		err := l.PushFront(v)
@@ -19,7 +20,7 @@ func main() {
 			fmt.Println(err)
 		}
 	}
-	
+
 	l.Print()
 	fmt.Println(l.size)
 
@@ -34,4 +35,7 @@ func main() {
 			fmt.Println(err)
 		}
 	}
+
+	s := &models.Stack{}
+	fmt.Println(s)
 }
